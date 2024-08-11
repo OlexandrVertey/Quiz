@@ -37,23 +37,20 @@ class MainProvider extends ChangeNotifier {
   }
 
   Future<void> createResultDB(String correctAnswers) async {
-    try {
-      int id = await sharedPreference.getIntPreferenceValue(SharedPreference.id);
-      if (id == 0) {
-        id = 1;
-      } else {
-        id++;
-      }
-      ResultModel resultModel = ResultModel(
-        id: id,
-        result: '$id poll',
-        correctAnswers: correctAnswers,
-      );
-
-      resultDB.createResultDB(resultModel);
-      await sharedPreference.setIntPreferenceValue(SharedPreference.id, id);
-    } catch(e) {
+    int id = await sharedPreference.getIntPreferenceValue(SharedPreference.id);
+    if (id == 0) {
+      id = 1;
+    } else {
+      id++;
     }
+    ResultModel resultModel = ResultModel(
+      id: id,
+      result: '$id poll',
+      correctAnswers: correctAnswers,
+    );
+
+    resultDB.createResultDB(resultModel);
+    await sharedPreference.setIntPreferenceValue(SharedPreference.id, id);
   }
 
   Future<void> getResultDB() async {

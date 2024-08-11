@@ -31,7 +31,6 @@ class BaseDependenciesProvider extends MultiProvider {
             Provider<SharedPreference>(create: (context) => SharedPreference(sharedPreference)),
           ],
           child: DependenciesProvider(
-            // selectCardsDB: selectCardsDB,
             sharedPreference: sharedPreference,
             child: child,
           ),
@@ -47,7 +46,6 @@ class DependenciesProvider extends StatelessWidget {
   }) : super(key: key);
 
   final Widget? child;
-  // final SharedPreferences? sharedPreference;
 
   @override
   Widget build(BuildContext context) {

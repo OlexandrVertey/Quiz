@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz/model/result_model.dart';
 import 'package:quiz/provider/main_provider.dart';
 
 class ResultPage extends StatefulWidget {

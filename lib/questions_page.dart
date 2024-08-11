@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz/history_page.dart';
@@ -34,7 +35,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
         if (value.mainState.questionNumber == 4) {
           WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
             Navigator.of(context).push(
-              MaterialPageRoute(
+              CupertinoPageRoute(
                 builder: (context) => ResultPage(listQuestions: _listQuestions),
               ),
             );
@@ -146,7 +147,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                     highlightColor: Colors.transparent,
                     onTap: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(
+                        CupertinoPageRoute(
                           builder: (context) => const HistoryPage(),
                         ),
                       );
